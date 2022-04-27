@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2 {
+         text-align: center;
+          font-size: 37px;
+          }
+         #container {
+             height: auto;
+             width: 50%;
+             box-shadow: rgba(119, 136, 153, 0.278) 0px 3px 23px 0px;
+             margin: auto;
+             padding-top: 20px;
+             border-radius: 30px;
+             background-color: rgba(127, 140, 153, 0.03);
+             
+         }
+
+         #display {
+             height: 70px;
+             width: 80%;
+             border-radius: 20px;
+             box-shadow: rgba(119, 136, 153, 0.278) 0px 3px 23px 0px;
+             margin: auto;
+             background-color: rgba(8, 16, 40, 0.767);
+             text-align: center;
+             padding-top: 37px;
+             font-size: large;
+             justify-content: center;
+             color: white;
+             font-size: 26px;
+         }
+
+         #keyboard {
+             height: auto;
+             width: 85%;
+             display: grid;
+             grid-template-columns: repeat(4,1fr);
+             grid-template-rows: repeat(4,70px);
+             justify-content: space-around;
+             padding-top: 30px;
+             margin: auto;
+             /* padding-left: 30px; */
+             /* align-items: center; */
+             grid-gap: 15px;
+             padding-bottom: 40px;
+             text-align: center;
+         }
+         #keyboard>div {
+             box-shadow:  rgba(119, 136, 153, 0.278) 0px 3px 23px 0px;
+             padding-top: 20px;
+             background-color: rgba(119, 136, 153, 0.253);
+             border-radius: 10px;
+             font-size: 26px;
+      
+         }
+         #keyboard>div:nth-child(4),#keyboard>div:nth-child(8),
+         #keyboard>div:nth-child(12),#keyboard>div:nth-child(16),
+         #keyboard>div:nth-child(15){
+             background-color:rgba(8, 16, 40, 0.767);
+             color: white;
+         }
+         #keyboard>div:nth-child(13){
+             background-color: rgb(209, 84, 84);
+         }
+         #keyboard>div:hover{
+             background-color: teal;
+         }
+
+
+
+    </style>
+</head>
+<body>
+
+    <h2>MASAI CALCULATOR</h2>
+    <div id="container">
+
+        <div id="display"></div>
+        <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>*</div>
+            <div>C</div>
+            <div>0</div>
+            <div>=</div>
+            <div>/</div>
+        </div>
+      
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+
+    var value = document.querySelectorAll("#keyboard>div");
+    var k ="";
+    console.log(value)
+    for(var a=0; a<value.length; a++){
+        value[a].addEventListener("click",myfunc);
+    }
+    console.log(value)
+    
+    function myfunc(){
+        var x = event.target.innerText;
+        console.log(x)
+
+       
+        if (x=="C")
+        {
+            k= "";
+            document.querySelector("#display").innerText="";
+        }
+        else if(x=="=")
+        {
+            k=eval(k);
+            document.querySelector("#display").innerText=k;
+        }
+        else {
+            
+               k = k + x;
+               console.log(k);
+            document.querySelector("#display").innerText=k;
+        }
+    }
+
+</script>

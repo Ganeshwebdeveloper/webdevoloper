@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, select {
+            display: block;
+            margin: auto;
+            width:80%;
+            height: 20px;
+            margin-bottom: 30px;
+        }
+        div {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <input type="text" class="form" placeholder="Enter Name"/>
+        <input type="number" class="form"placeholder="Enter age"/>
+         <select name="gender" class="form">
+            <option value="select "> select </option>
+             <option value="Male">Male</option>
+             <option value="FeMale">Female</option>
+        </select>
+       <input type="text" class="form" placeholder="Enter Email"/>
+       <input type="number" class="form"placeholder="Enter mobile no">
+       <input id="sub" type="submit"/>
+
+       <hr/>
+
+    </div>
+</body>
+</html>
+
+<script>
+
+     var arr = document.querySelectorAll(".form").values;
+     console.log(arr)
+     sub.addEventListener("click", func);
+
+function func () {
+    event.target.console
+    console.log(arr)
+}
+  
+
+</script>
