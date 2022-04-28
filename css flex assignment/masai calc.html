@@ -108,3 +108,39 @@
     
 </body>
 </html>
+
+
+<script>
+
+    var value = document.querySelectorAll("#keyboard>div");
+    var k ="";
+    console.log(value)
+    for(var a=0; a<value.length; a++){
+        value[a].addEventListener("click",myfunc);
+    }
+    console.log(value)
+    
+    function myfunc(){
+        var x = event.target.innerText;
+        console.log(x)
+
+       
+        if (x=="C")
+        {
+            k= "";
+            document.querySelector("#display").innerText="";
+        }
+        else if(x=="=")
+        {
+            k=eval(k);
+            document.querySelector("#display").innerText=k;
+        }
+        else {
+            
+               k = k + x;
+               console.log(k);
+            document.querySelector("#display").innerText=k;
+        }
+    }
+
+</script>

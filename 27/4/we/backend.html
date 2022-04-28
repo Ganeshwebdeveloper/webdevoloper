@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            font-size: 30px;
+            text-align: center;
+        }
+        #sub {
+           text-align: center;
+           /* margin-left: 43%; */
+           margin-top: 14px;
+        }
+        div{
+            margin:auto
+           width: 80%;
+        }
+    </style>
+</head>
+<body>
+     <h2>Backend</h2>
+     <hr/>
+     <div>
+        <form id="form">
+            <input type="text" placeholder="Enter name" id="name"/>
+            <input type="text" placeholder="Enter imgurl" id="imgurl"/>
+            <input type="text" placeholder="companylogo" id="companylogo"/>
+            <input type="text" placeholder="role" id="role"/>
+            <br>
+            <input type="submit" id="sub"/>
+   
+        </form>
+     </div>
+     
+</body>
+</html>
+
+<script>
+     
+     document.querySelector("#form").addEventListener("submit", myfunc);
+     var arr =(JSON.parse(localStorage.getItem("myarr") )|| [])
+     function myfunc(){
+         event.preventDefault();
+        var obj = {
+            myname:form.name.value,
+            myimg:form.imgurl.value,
+            mycompurl:form.companylogo.value,
+            myrole: form.role.value
+        }
+        arr.push(obj);
+        console.log(arr);
+        localStorage.setItem("myarr",JSON.stringify(arr))
+    
+     }
+
+</script>
