@@ -1,0 +1,148 @@
+
+<!DOCTYPE Text>
+<Text lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 21PX;
+            font-weight: 600;
+        }
+        #container {
+            width: 40%;
+            height: auto;
+            box-shadow: grey 0px 7px 28px 0px;
+            margin: auto;
+            margin-top: 75px;
+            border-radius: 22px;
+            padding-top: 14px;
+            background-color: rgba(128, 128, 128, 0.149);
+
+        }
+        #dis1, #dis2{
+            width: 90%;
+            height: 40px;
+            margin: auto;
+            margin-top: 15px;
+            box-shadow: rgba(128, 128, 128, 0.355) 0px 7px 28px 0px;
+            border-radius: 22px;
+            background-color: rgba(128, 128, 128, 0.988);
+            color: white;
+            padding-top: 10px;
+            text-align: center;
+        }
+        #keys {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-around;
+            gap: 20px;
+            width: 87%;
+            
+        }
+        #keys>div {
+            height: 30px;
+            width: 22%;
+            box-shadow: grey 0px 7px 21px 0px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        #keys>div:hover {
+            background-color: grey;
+            cursor:grab
+        }
+    </style>
+</head>
+<body>
+    <h2>EXPONENTIAL CALCULATOR</h2>
+    <div id="container">
+        <div id="calc">
+        <div id="dis1"></div>
+        <div id="dis2"></div>
+        <div id="keys">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>^</div>
+            <div>0</div>
+            <div>=</div>
+            <div>C</div>
+        </div>
+    </div>
+        </div>
+    
+</body>
+</Text>
+<script>
+
+   
+    
+
+     var x = document.querySelectorAll("#keys>div");
+     var k ="";
+     console.log("dfgf")
+     for(var a=0; a<x.length; a++){
+         x[a].addEventListener("click",myfunc )
+     }
+     function func(){
+     }
+     function myfunc() {
+         z= event.target.innerText;
+        //  document.write("ganesh")
+        var display1 = document.querySelector("#dis1")
+        var display2 = document.querySelector("#dis2")
+        var num = 0;
+        if (z == "^"){
+            num = +k;
+            k=k+z;
+        }
+       else if (z=="="){
+           var d = "";
+           var index = 0;
+           for(var a=0; a<k.length; a++){
+               console.log(k);
+               if(k[a]=="^"){
+                   index = a;
+                   break;
+               }
+               d += k[a];
+           }
+           d2 = "";
+           for(var a=(index+1); a<k.length; a++){
+                  d2 += k[a];
+           }
+           d2 = +d2;
+           d = +d;
+           var s = d;
+           for(var a=0; a<(d2-1); a++){
+              d = s*d;
+              console.log(d,s);
+           }
+           display2.innerText=d;
+           
+            }
+          
+        else if (z=="C"){
+            k="";
+            k1="";
+            k2="";
+            display1.innerText=k
+            display2.innerText= k
+        }
+        else {
+            k = k+z;
+            display1.innerText = k;
+        }
+  
+     }
+    
+</script>

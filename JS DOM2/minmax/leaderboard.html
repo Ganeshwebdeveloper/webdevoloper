@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-size: 25PX;
+            font-weight: 600;
+        }
+        #gan {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+   
+       #total {
+           height: auto;
+           width: 40%;
+           margin: auto;
+           margin-top: 50px;
+       }
+       
+
+        #minmax {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        #minmax >div {
+            height: 60px;
+            width: 30%;
+            border: 1px solid black;
+            background-color: rgba(128, 0, 0, 0.779);
+            padding-top: 22px;
+           text-align: center;
+           color: white;
+
+        }
+        #display {
+           height: 70px;
+           width: 100%;
+           border: 1px solid black;
+           margin: auto;
+           margin-top: 50px;
+           background-color: rgba(128, 128, 128, 0.475);
+           padding-top: 22px;
+           text-align: center;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3, 70px);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        #container >div {
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 25px;
+            background-color: rgba(9, 84, 83, 0.996);
+            color: aliceblue;
+        }
+        #container >div:hover,.zero:hover {
+                background-color: black
+        }
+        .zero {
+            height: 43px;
+            border: 1px solid black;
+            width: 85px;
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+            padding-top: 25px;
+            background-color: rgba(9, 84, 83, 0.996);
+            color: aliceblue;
+        }
+       #total>div:last-child {
+            margin: auto;
+            margin-top: 15PX;
+            height: 40px;
+            width: 70%;
+            border: 1px solid black;
+            color: white;
+            background-color: black;
+            text-align: center;
+            padding-top: 15PX;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="total">
+        <div id="gan">
+            <h2>min</h2>
+
+        <h2> max</h2>
+        </div>
+        <div id="minmax">
+            <div class="min"></div>
+            <div class="max"></div>
+        </div>
+        <div id="display"></div>
+        <div id="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            
+        </div>
+        <div class="zero">0</div>
+         <div class="enter">ENTER</div>
+     </div>
+    
+</body>
+</html>
+
+<script>
+    var x = document.querySelectorAll("#container>div");
+ document.querySelector(".zero").addEventListener("click", myfunc);
+ document.querySelector(".enter").addEventListener("click",myfunc1);
+   k="";
+   max= -Infinity;
+   min= Infinity;
+    for(var a=0; a<x.length; a++){
+        console.log(x[a])
+        // var i = document.X[a].innerText;
+       x[a].addEventListener("click" ,myfunc)
+    }
+        function myfunc(){
+            var z = event.target.innerText;
+            k = k + z;
+            document.querySelector("#display").innerText=k;
+        }
+        function myfunc1 (){
+           if(k < min){
+               min=k;
+               document.querySelector(".min").innerText=k;
+             k ="";
+             document.querySelector("#display").innerText=k;     
+           }
+          else if(k>max){
+               max =k;
+               document.querySelector(".max").innerText=k; 
+               k="";
+               document.querySelector("#display").innerText=k;       
+           }
+           else {
+            // document.querySelector(".max").innerText=max;
+            //    document.querySelector(".min").innerText=min;
+              k="";
+               document.querySelector("#display").innerText=k;
+           }
+        }
+    
+</script>

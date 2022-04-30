@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+    
+</head>
+<body>
+    <div id="total">
+        <div>
+            <a href="index.html"> Home</a>
+        </div>
+        <div>
+            <a href="applied.html">Applied Jobs</a>
+        </div>
+        <div>
+            <a href="bookmarks.html">bookmarks</a>
+        </div>
+    </div>
+    <hr>
+    <form id="form">
+        <h2>enter details here</h2>
+        <input type="text" placeholder="Enter name" id="name"/>
+        <input type="email"placeholder="Enter Email" id="mail"/>
+        <select id="role">
+            <option value="FSD">FSD</option>
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+        </select>
+        <input type="text"placeholder="expected salary in (LPA)" id="salary">
+        <input type="submit"/>
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit", myFunc);
+    var arr = JSON.parse(localStorage.getItem("mylist"))||[];
+    
+    function myFunc(){
+        event.preventDefault();
+
+        var obj = {
+            myName:form.name.value,
+            myEmail:form.mail.value,
+            myRole:form.role.value,
+            mySalary:form.salary.value
+        }
+        arr.push(obj)
+    localStorage.setItem("mylist",JSON.stringify(arr));
+    }
+
+</script>

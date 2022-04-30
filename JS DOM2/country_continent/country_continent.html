@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background-color: rgba(135, 207, 235, 0.268); */
+            background-image: url(https://image.shutterstock.com/image-vector/world-map-vector-isolated-on-260nw-1476386534.jpg);
+        background-size: cover;
+        
+        color: teal
+        }
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 20px;
+        }
+
+         *{
+             padding: 0px;
+             margin: 0px;
+             font-size: 24px;
+             font-weight: 500;
+             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         }
+         #total {
+             display: flex;
+             height: 50px;
+             width: 30%;
+             margin: auto;
+                margin-top: 50PX;
+                background-color: aliceblue;
+                padding-top: 20px;
+                padding-left: 10px;
+                border-radius: 15px;
+         }
+         #total>div:nth-child(3),#total>div:nth-child(2) {
+             padding-left: 40px;
+         }
+         select {
+             background-color: aliceblue;
+             border: 0px;
+             color: blue;
+             cursor: pointer;
+             border-bottom: 3px solid teal;
+             
+         }
+         button {
+            background-color: aliceblue;
+             border: 2px solid teal;
+             color: blue;
+             cursor: pointer;
+             border-radius: 10px;
+             font-size: 16px;
+             padding: 6px;
+         }
+
+    </style>
+</head>
+<body>
+    <H2>Select a country to Know its Continent</H2>
+    <div id="total">
+        <div>Select Country:</div>
+        <div>
+            <select name="Select_Country.." id="selec">
+            <option value="India">India</option>
+            <option value="United States Of America">America</option>
+            <option value="China">China</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Australia">Australia</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">Canada</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Sweden">Sweden</option>
+        </select>
+        </div>
+        <div>
+            <button id ="sub">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var x = document.querySelector("#sub");
+x.addEventListener("click",myfun);
+var Asia = ["Japan", "India"]
+function myfun(){
+  var k = document.querySelector("#selec").value;
+   switch (k) {
+        case "India":alert("This Country belongs to Asia Continent");
+        break;
+        case  "Japan":alert("This Country belongs to Asia Continent");
+           break;
+           case"China":alert("This Country belongs to Asia Continent");
+             break;
+             case "Nepal":alert("This Country belongs to Asia Continent");
+            break;
+            case "Singapore" : alert("This Country belongs to Asia Continent");
+break;
+        case "England" :alert("This Country belongs to Europe Continent");
+        break;
+        case "Sweden" :alert("This Country belongs to Europe Continent");
+          break;   
+          case "Germany":alert("This Country belongs to Europe Continent");
+          break;
+          case  "France" : alert("This Country belongs to Europe Continent");
+       break;
+        case "Nigeria" :alert("This Country belongs to Africa continent");
+        break;
+            case "Egypt" :  alert("This Country belongs to Africa continent")    
+        break;
+    case "United States Of America": alert("This Country belongs to North America Continent");
+    break;
+    case "Canada": alert("This Country belongs to North America Continent");
+   break;
+   case"Mexico":  alert("This Country belongs to North America Continent");
+               
+    break;  
+        case 
+        "Argentina" :alert ("This Country belongs to South America continent");
+        break;
+        case "Brazil" :alert ("This Country belongs to South America continent");
+     break;
+
+
+}
+}
+
+</script>

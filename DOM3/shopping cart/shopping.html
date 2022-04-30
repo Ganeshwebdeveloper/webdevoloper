@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #container>div {
+            box-shadow: 0px 0px 2px 0px  rgba(128, 128, 128, 0.458);
+            justify-content: space-around;
+            padding-bottom: 20px;
+        }
+        #container>div>h2 {
+            padding: 30px;
+            display: inline;
+        }
+        #container>div>p {
+            display: inline;
+            padding-left: 20px;
+            text-decoration: line-through;
+            color: rgba(128, 128, 128, 0.542);
+            font-size: 18px;
+        }
+        h3 {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.763);
+            font-weight : 400;
+        }
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+ 
+ var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+];
+console.log("ganesh")
+var x = document.createElement("div")
+x.id="container";
+x.style.height="auto";
+x.style.width= "85%";
+x.style.margin="auto"; 
+
+
+for (var a=0; a<data.length; a++){
+    
+    var x1 = document.createElement("div")
+x1.style.height="auto";
+x1.style.width="23%";
+var x1img = document.createElement("img")
+x1img.setAttribute("src",data[a].imgUrl)
+
+x1img.style.width="100%";
+var x1price = document.createElement("h2")
+x1name = document.createElement("h3");
+x1name.innerText="LATEST MEN'S SNEAKERS";
+x1price.innerText=data[a].price;
+var x1strprice = document.createElement("p")
+x1strprice.innerText=data[a].strikedOffPrice;
+x1.append(x1img,x1name,x1price,x1strprice)
+x.append(x1);
+}
+document.querySelector("body").append(x);
+
+</script>

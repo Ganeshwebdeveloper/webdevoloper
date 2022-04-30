@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: snow;
+        }
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+            color: darkolivegreen;
+            font-size: 25px;
+            
+        }
+
+          * {
+              padding: 0px;
+              margin: 0px;
+              font-size: 20px;
+              font-weight: 600;
+              font-family: 'Times New Roman', Times, serif;
+          }
+         #container {
+             width: 40%;
+             height: auto;
+              margin: auto;
+             margin-top: 40px;
+             margin-bottom: 15px;
+           
+         }
+        select, input {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: grey 0px 7px 24px 0px;
+            background-color: rgb(255, 250, 250);      
+                border : 0px;
+            border-bottom: 3px solid grey;
+            color: brown;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+        }
+        #sub {
+            width: 40%;
+            margin-left: 30%;
+            border-radius: 7px;
+            margin-top: 20px;
+            background-color: snow;
+        }
+        #total {
+            width: 80%;
+            margin-top: 20px;
+            margin: auto;
+           display: grid;
+           grid-template-columns: repeat(5,1fr);
+           grid-template-rows: repeat(6, 250px);
+           grid-gap: 15px;
+        }
+        #total> div {
+            margin-top: 30px;
+           text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            flex-wrap: wrap;
+        } 
+        button, p {
+            padding-top: 20px;
+        }
+        button {
+            border: 1px solid black
+        }
+
+    </style>
+</head>
+<body>
+     <div id="container">
+         <h2>BOZAZ PRODUCTS</h2>
+        <form id="form">
+            <select id="catagory">
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Home appliance">Home Appliance</option>
+                <option value="Books">Books</option>
+            </select>
+            <input type="text" placeholder="Product Title" id="title">
+            <input type="text" name="descrition" id="disc" placeholder="Item Description">
+            <input type="text" id="price" placeholder="Product price">
+            <input type="submit" id="sub">
+        </form>
+     </div>
+     <hr>
+     <div id="total">
+
+     </div>
+   
+    
+</body>
+</html>
+
+<script>
+
+       var form = document.querySelector("#form")
+       form.addEventListener("submit",myfun1);
+
+
+       function myfun1(){
+           event.preventDefault();
+           var x = document.createElement("div")
+           var x1 = document.createElement("h2")
+           var x2 = document.createElement("p")
+           var x3 = document.createElement("p")
+           x3.style.fontSize="16px"
+           var x4 = document.createElement("p")
+           var btn = document.createElement("button")
+           btn.innerText="delete";
+           btn.style.padding="3px";
+           btn.style.backgroundColor="red";
+           btn.style.color="white"
+
+           x.append(x1,x2,x3,x4,btn);
+           document.getElementById("total").append(x);
+
+           var catagory = form.catagory.value
+           var title = form.title.value
+           var disc = form.disc.value
+           var price = form.price.value
+
+           x1.innerHTML = catagory;
+           x2.innerHTML = title;
+           x3.innerHTML = disc;
+           x4.innerHTML = price;
+
+           btn.addEventListener("click",myfun2);
+           function myfun2() {
+              x.remove()
+           }
+           
+       }
+
+</script>
